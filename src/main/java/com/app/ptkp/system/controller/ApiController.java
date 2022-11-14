@@ -3,8 +3,6 @@ import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import com.app.ptkp.system.controller.logik.PanduanLogik;
 import com.app.ptkp.system.controller.model.QrCodeRespon;
 import com.app.ptkp.system.controller.model.Sertifikat;

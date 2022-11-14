@@ -1,5 +1,6 @@
 package com.app.ptkp.system.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,6 +20,9 @@ import com.app.ptkp.system.util.QRCodeGenerator;
 import com.app.ptkp.system.util.RandomCaracter;
 import com.google.zxing.WriterException;
 
+//import helolib.ClassSayHello;
+//import net.sf.jni4net.Bridge;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +33,38 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class IndexController {
 
     @Autowired	private SertifikatRepo sertifikatRepo;	 
     @Autowired  private SertifikatService sertifikatService;
+    
+    
+    @RequestMapping(value = "/weba", method = RequestMethod.GET)
+    @ResponseBody
+    public String  listforCompanies(@ModelAttribute("val") String val) {    
+        List<String> arr= new ArrayList<>(); 
+//        Bridge.setVerbose(true);
+//		try {
+//			Bridge.init();
+//			File prox = new File(System.getProperty("java.library.path")+"\\heloLib.j4n.dll");
+//			Bridge.LoadAndRegisterAssemblyFrom(prox);
+//			
+//			ClassSayHello csharp = new ClassSayHello();			 
+//			arr.add(""+csharp.Say(val));
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+        
+        
+        return arr.toString();
+    }
 	
     @GetMapping(value = "/")
     public String index(Model model){

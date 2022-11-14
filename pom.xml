@@ -89,6 +89,125 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
     <version>3.4.0</version>
 </dependency>
 
+
+<dependency>
+    <groupId>com.lib.pacakage</groupId>
+    <artifactId>heloLib-dll</artifactId>
+    <version>0.1</version>
+    <scope>provided</scope>
+    <type>dll</type> 
+</dependency>
+
+<dependency>
+    <groupId>com.lib.pacakage</groupId>
+    <artifactId>heloLib-jar</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>jar</type> 
+</dependency>
+
+<dependency>
+    <groupId>com.lib.pacakage</groupId>
+    <artifactId>jni4net.j</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>jar</type> 
+</dependency>
+
+
+<!--
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>jni4net-evan</artifactId>
+    <version>0.1</version>
+    <scope>jar</scope>
+</dependency>
+
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>heloLib.j4n.jar</artifactId>
+    <version>0.1</version>
+    <scope>jar</scope>
+</dependency>
+
+
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>jni4net.n-0.8.9.0.dll</artifactId>
+    <version>0.1</version>
+   <scope>runtime</scope>
+    <type>dll</type> 
+</dependency>
+
+
+
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>heloLib.dll</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>dll</type>
+</dependency>
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>heloLib.j4n.dll</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>dll</type>
+</dependency>
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>jni4net.n.w32.v20-0.8.9.0.dll</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>dll</type>
+</dependency>
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>jni4net.n.w32.v40-0.8.9.0.dll</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>dll</type>
+</dependency>
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>jni4net.n.w64.v20-0.8.9.0.dll</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>dll</type>
+</dependency>
+<dependency>
+    <groupId>com.evan.lib.jni4net</groupId>
+    <artifactId>jni4net.n.w64.v40-0.8.9.0.dll</artifactId>
+    <version>0.1</version>
+    <scope>runtime</scope>
+    <type>dll</type>
+</dependency>
+
+
+
+ mvn install:install-file 
+-Dfile=D:\Code\csharp\sampah\lib\heloLib.j4n.jar 
+-DgroupId=com.evan.lib.jni4net -DartifactId=heloLib.j4n.jar  
+-Dversion=0.1 -Dpackaging=jar -DgeneratePom=true
+
+<dependency>
+    <groupId>helolib</groupId>
+    <artifactId>helo</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>D:\Code\csharp\sampah\lib\heloLib.j4n.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>jni4net-j</artifactId>
+    <version>0.8.9.0</version>
+    <scope>system</scope>
+    <systemPath>D:\Code\csharp\sampah\lib\jni4net.j-0.8.9.0.jar</systemPath>
+</dependency>
+-->
+
+
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -115,18 +234,29 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 
 <build>
 <plugins>
+
 <plugin>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-maven-plugin</artifactId>
-<configuration>
-                     <addResources>true</addResources>
-                 </configuration>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-maven-plugin</artifactId>
+					 <configuration>
+	                     <addResources>true</addResources>
+	                     <includeSystemScope>true</includeSystemScope>
+	                 </configuration>
 </plugin>
 <!-- <plugin>
    <groupId>pl.project13.maven</groupId>
    <artifactId>git-commit-id-plugin</artifactId>
    <version>2.2.1</version>
 </plugin>-->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M1</version>
+</plugin>
+
+
+
+
 </plugins>
 
 </build>
